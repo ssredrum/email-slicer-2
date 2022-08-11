@@ -20,12 +20,12 @@ canvas1.create_window(100, 140, window=entry1)  # standarts entry
  
 def getEntry(): 
     res = entry1.get()  #  # variable = get the text of entry 5 
-    user_name = res[:res.index('@')] 
-    domain_name = res[res.index('@') + 1:]
+    user_name = res[:res.index('@')] # user name before email.@
+    domain_name = res[res.index('@') + 1:] # domains name after @ / IT is '+1'
     print(f"Your usernames are {user_name} and your domain name is {domain_name}") # showing the result
     
 btn = tk.Button(root, height=1, width=12, text="slice", command=getEntry, 
                  bg='dark grey')  # button with standart 
 canvas1.create_window(100, 300, window=btn) # x, y standarts 
  
-root.mainloop()
+root.mainloop() # run program
