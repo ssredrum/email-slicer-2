@@ -1,0 +1,31 @@
+import re # importing the libraries of specifying a set of strings that matches it 
+import tkinter as tk  # import tkinter as tk to future 
+ 
+root = tk.Tk()  # root is window 
+ 
+canvas1 = tk.Canvas(root, width=400, height=330, relief='raised')  # standart of window 
+canvas1.pack()  # widget in block 
+ 
+label1 = tk.Label(root, text='email slicer')  # name of label 
+label1.config(font=('helvetica', 14))  # setting of font 
+canvas1.create_window(200, 25, window=label1)  # x, y standarts 
+ 
+label2 = tk.Label(root, text='Type your Text:')  # name of label 
+label2.config(font=('helvetica', 10))  # setting of font 
+canvas1.create_window(100, 100, window=label2)  # x, y standarts 
+ 
+ 
+entry1 = tk.Entry(root)  # widget that has a line which can be texted be user 
+canvas1.create_window(100, 140, window=entry1)  # standarts entry 
+ 
+def getEntry(): 
+    res = entry1.get()  #  # variable = get the text of entry 5 
+    user_name = res[:res.index('@')] 
+    domain_name = res[res.index('@') + 1:]
+    print(f"Your usernames are {user_name} and your domain name is {domain_name}") # showing the result
+    
+btn = tk.Button(root, height=1, width=12, text="slice", command=getEntry, 
+                 bg='dark grey')  # button with standart 
+canvas1.create_window(100, 300, window=btn) # x, y standarts 
+ 
+root.mainloop()
