@@ -1,5 +1,6 @@
 import re # importing the libraries of specifying a set of strings that matches it 
-import tkinter as tk  # import tkinter as tk to future 
+import tkinter as tk  # import tkinter as tk to future
+
  
 root = tk.Tk()  # root is window 
  
@@ -13,16 +14,19 @@ canvas1.create_window(200, 25, window=label1)  # x, y standarts
 label2 = tk.Label(root, text='Type your Text:')  # name of label 
 label2.config(font=('helvetica', 10))  # setting of font 
 canvas1.create_window(100, 100, window=label2)  # x, y standarts 
- 
+
  
 entry1 = tk.Entry(root)  # widget that has a line which can be texted be user 
 canvas1.create_window(100, 140, window=entry1)  # standarts entry 
  
-def getEntry(): 
+def getEntry():
     res = entry1.get()  #  # variable = get the text of entry 5 
     user_name = res[:res.index('@')] # user name before email.@
     domain_name = res[res.index('@') + 1:] # domains name after @ / IT is '+1'
-    print(f"Your usernames are {user_name} and your domain name is {domain_name}") # showing the result
+    label3 = tk.Label(root, text= 'Your username is ' + user_name + ' your domain name is ' + domain_name,font=('helvetica', 10)) # label with text and result
+    canvas1.create_window(200, 210, window=label3) # x, y standarts
+    
+    
     
 btn = tk.Button(root, height=1, width=12, text="slice", command=getEntry, 
                  bg='dark grey')  # button with standart 
