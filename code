@@ -18,7 +18,7 @@ label2.config(font=('helvetica', 10))  # setting of font
 canvas1.create_window(100, 100, window=label2)  # x, y standarts 
 
  
-entry1 = tk.Entry(root)  # widget that has a line which can be texted be user 
+entry1 = tk.Entry(root)  # widget that has a line which can be texted by user 
 canvas1.create_window(100, 140, window=entry1)  # standarts entry 
  
 def getEntry(): # the keyword for defining a function
