@@ -1,3 +1,4 @@
+import re # importing the libraries of specifying a set of strings that matches it 
 import tkinter as tk  # import tkinter as tk to future
 from tkinter import * # represents all the functions and built-in modules in the tkinter library
 from tkinter import messagebox # import massegebox to future
@@ -5,37 +6,37 @@ from tkinter import messagebox # import massegebox to future
  
 root = tk.Tk()  # root is window tk
  
-canvas1 = tk.Canvas(root, width=400, height=330, relief='raised')  # standart of window 
+canvas1 = tk.Canvas(root, width=400, height=330, relief='raised')  # standard of window 
 canvas1.pack()  # widget in block 
  
 label1 = tk.Label(root, text='email slicer')  # name of label 
 label1.config(font=('helvetica', 14))  # setting of font 
-canvas1.create_window(200, 25, window=label1)  # x, y standarts 
+canvas1.create_window(200, 25, window=label1)  # x, y standards 
  
 label2 = tk.Label(root, text='Type your Text:')  # name of label 
 label2.config(font=('helvetica', 10))  # setting of font 
-canvas1.create_window(100, 100, window=label2)  # x, y standarts 
+canvas1.create_window(100, 100, window=label2)  # x, y standards 
 
  
-entry1 = tk.Entry(root)  # widget that has a line which can be texted by user 
-canvas1.create_window(100, 140, window=entry1)  # standarts entry 
+entry1 = tk.Entry(root)  # widget that has a line which can be texted by the user 
+canvas1.create_window(100, 140, window=entry1)  # standards entry 
  
 def getEntry(): # the keyword for defining a function
     try: # try below code
-        res = entry1.get()  #  variable = person's inputing in entry
+        res = entry1.get()  #  variable = person's inputting in entry
         user_name = res[:res.index('@')] # user name before email.@
         domain_name = res[res.index('@') + 1:] # domains name after @ / IT is '+1'
         label3 = tk.Label(root, text= 'Your username is ' + user_name + ' your domain name is ' + domain_name,font=('helvetica', 10)) # label with user name and domain naim in window of tk
-        canvas1.create_window(200, 210, window=label3) # x, y standarts
+        canvas1.create_window(200, 210, window=label3) # x, y standards
     except: # in otherwise
-         messagebox.showinfo("Email slicer", "Error! You should add an according standarts email adress ") # showing message box with text
+         messagebox.showinfo("Email slicer", "Error! You should add an according standard email address ") # showing message box with text
        
                           
     
     
     
 btn = tk.Button(root, height=1, width=12, text="slice", command=getEntry, 
-                 bg='dark grey')  # button with standart 
-canvas1.create_window(100, 300, window=btn) # x, y standarts 
+                 bg='dark grey')  # button with standard 
+canvas1.create_window(100, 300, window=btn) # x, y standards 
  
 root.mainloop() # run program
