@@ -1,5 +1,7 @@
 import re # importing the libraries of specifying a set of strings that matches it 
 import tkinter as tk  # import tkinter as tk to future
+from tkinter import * # represents all the functions and built-in modules in the tkinter library
+from tkinter import messagebox # import massegebox to future
 
  
 root = tk.Tk()  # root is window 
@@ -19,12 +21,17 @@ canvas1.create_window(100, 100, window=label2)  # x, y standarts
 entry1 = tk.Entry(root)  # widget that has a line which can be texted be user 
 canvas1.create_window(100, 140, window=entry1)  # standarts entry 
  
-def getEntry():
-    res = entry1.get()  #  # variable = get the text of entry 5 
-    user_name = res[:res.index('@')] # user name before email.@
-    domain_name = res[res.index('@') + 1:] # domains name after @ / IT is '+1'
-    label3 = tk.Label(root, text= 'Your username is ' + user_name + ' your domain name is ' + domain_name,font=('helvetica', 10)) # label with text and result
-    canvas1.create_window(200, 210, window=label3) # x, y standarts
+def getEntry(): # the keyword for defining a function
+    try: # try except blocks
+        res = entry1.get()  #  # variable = get the text of entry 5 
+        user_name = res[:res.index('@')] # user name before email.@
+        domain_name = res[res.index('@') + 1:] # domains name after @ / IT is '+1'
+        label3 = tk.Label(root, text= 'Your username is ' + user_name + ' your domain name is ' + domain_name,font=('helvetica', 10)) # label with text and result
+        canvas1.create_window(200, 210, window=label3) # x, y standarts
+    except: # try except blocks
+         messagebox.showinfo("Email slicer", "Error! You should add an according standarts email adress ") # showing message box with text
+       
+                          
     
     
     
@@ -33,3 +40,4 @@ btn = tk.Button(root, height=1, width=12, text="slice", command=getEntry,
 canvas1.create_window(100, 300, window=btn) # x, y standarts 
  
 root.mainloop() # run program
+
